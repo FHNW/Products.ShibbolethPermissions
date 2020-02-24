@@ -127,8 +127,10 @@ class ShibbolethPermissions(BasePlugin):
         This simple test returns everything, which at this point is nothing.
         """
         roles = {}
-        param_keys = params.keys().sort()
-        for ii in self.localRoles.iterkeys():
+        
+        temp = params.keys()
+        param_keys = sorted(temp)
+        for ii in self.localRoles.keys():
             roles[ii] = list(self.localRoles[ii])
         if not path and not params:
             return roles        # no select given, so return everything

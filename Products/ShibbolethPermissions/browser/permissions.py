@@ -96,7 +96,8 @@ class ShibbolethView(BrowserView):
             for name, utility in zope.component.getUtilitiesFor(ISharingPageRole)
             if utility.required_permission is None or \
                     mtool.checkPermission(utility.required_permission, context)]
-        pairs.sort(lambda x, y: cmp(x['id'], y['id']))
+        #pairs.sort( key = lambda x, y: cmp(x['id'], y['id']))
+        pairs.sort( key = lambda x: x['id'])
         return pairs
 
     @memoize
