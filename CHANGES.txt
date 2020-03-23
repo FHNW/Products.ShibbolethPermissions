@@ -1,7 +1,7 @@
 0.8b3 (unreleased)
 ==================
 
-- Nothing changed yet.
+- Plone 5.2. compatibility.
 
 
 0.8b2 (2010-11-19)

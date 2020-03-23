@@ -7,7 +7,10 @@ import logging
 
 from AccessControl import ClassSecurityInfo
 from ZODB.POSException import ConflictError
-from Globals import InitializeClass
+try:
+    from Globals import InitializeClass
+except ImportError:
+    from AccessControl.class_init import InitializeClass
 from Products.CMFCore.utils import getToolByName
 from Products.CMFCore.utils import _getAuthenticatedUser
 from Products.PageTemplates.PageTemplateFile import PageTemplateFile
